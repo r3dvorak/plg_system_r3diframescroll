@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
+  "name": "plg_system_r3diframescroll",
+  "version": "1.0.0",
+  "license": "GNU General Public License version 2 or later; see LICENSE.txt",
+  "assets": [
+    {
+      "name": "plg_system_r3diframescroll.scroll",
+      "type": "script",
+      "uri": "plg_system_r3diframescroll/js/r3diframescroll.js",
+      "attributes": {
+        "defer": true
+      }
+    }
+  ]
+}

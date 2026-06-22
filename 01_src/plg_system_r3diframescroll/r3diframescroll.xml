@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="system" method="upgrade" version="5.0">
+    <name>PLG_SYSTEM_R3DIFRAMESCROLL</name>
+    <creationDate>2026-06-22</creationDate>
+    <author>Richard Dvorak</author>
+    <authorEmail>info@r3d.de</authorEmail>
+    <authorUrl>https://www.r3d.de</authorUrl>
+    <copyright>2026 Richard Dvorak</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <version>1.0.0</version>
+    <description>PLG_SYSTEM_R3DIFRAMESCROLL_DESCRIPTION</description>
+    <namespace path="src">Joomla\Plugin\System\R3diframescroll</namespace>
+
+    <files>
+        <filename plugin="r3diframescroll">r3diframescroll.php</filename>
+        <folder>services</folder>
+        <folder>src</folder>
+        <folder>language</folder>
+    </files>
+
+    <media destination="plg_system_r3diframescroll" folder="media">
+        <folder>js</folder>
+        <filename>joomla.asset.json</filename>
+    </media>
+
+    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.plg_system_r3diframescroll.ini</language>
+        <language tag="en-GB">en-GB/en-GB.plg_system_r3diframescroll.sys.ini</language>
+        <language tag="de-DE">de-DE/de-DE.plg_system_r3diframescroll.ini</language>
+        <language tag="de-DE">de-DE/de-DE.plg_system_r3diframescroll.sys.ini</language>
+    </languages>
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field
+                    name="enabled_on_frontend"
+                    type="radio"
+                    default="1"
+                    label="PLG_SYSTEM_R3DIFRAMESCROLL_FIELD_ENABLED_ON_FRONTEND_LABEL"
+                    description="PLG_SYSTEM_R3DIFRAMESCROLL_FIELD_ENABLED_ON_FRONTEND_DESC"
+                    class="btn-group btn-group-yesno"
+                    filter="integer"
+                    layout="joomla.form.field.radio.switcher"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field
+                    name="iframe_selector"
+                    type="text"
+                    default="iframe[src*=&quot;edoobox.com&quot;], iframe[id^=&quot;edoobox_&quot;], iframe[name^=&quot;edooboxFrame_&quot;]"
+                    label="PLG_SYSTEM_R3DIFRAMESCROLL_FIELD_IFRAME_SELECTOR_LABEL"
+                    description="PLG_SYSTEM_R3DIFRAMESCROLL_FIELD_IFRAME_SELECTOR_DESC"
+                    size="100"
+                />
+                <field
+                    name="storage_key"
+                    type="text"
+                    default="r3d_iframescroll_target"
+                    label="PLG_SYSTEM_R3DIFRAMESCROLL_FIELD_STORAGE_KEY_LABEL"
+                    description="PLG_SYSTEM_R3DIFRAMESCROLL_FIELD_STORAGE_KEY_DESC"
+                    size="40"
+                />
+                <field
+                    name="scroll_offset"
+                    type="number"
+                    default="80"
+                    label="PLG_SYSTEM_R3DIFRAMESCROLL_FIELD_SCROLL_OFFSET_LABEL"
+                    description="PLG_SYSTEM_R3DIFRAMESCROLL_FIELD_SCROLL_OFFSET_DESC"
+                    min="0"
+                    step="1"
+                    validate="number"
+                    filter="integer"
+                />
+                <field
+                    name="scroll_delay"
+                    type="number"
+                    default="500"
+                    label="PLG_SYSTEM_R3DIFRAMESCROLL_FIELD_SCROLL_DELAY_LABEL"
+                    description="PLG_SYSTEM_R3DIFRAMESCROLL_FIELD_SCROLL_DELAY_DESC"
+                    min="0"
+                    step="50"
+                    validate="number"
+                    filter="integer"
+                />
+                <field
+                    name="smooth_scroll"
+                    type="radio"
+                    default="1"
+                    label="PLG_SYSTEM_R3DIFRAMESCROLL_FIELD_SMOOTH_SCROLL_LABEL"
+                    description="PLG_SYSTEM_R3DIFRAMESCROLL_FIELD_SMOOTH_SCROLL_DESC"
+                    class="btn-group btn-group-yesno"
+                    filter="integer"
+                    layout="joomla.form.field.radio.switcher"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field
+                    name="require_user_interaction"
+                    type="radio"
+                    default="1"
+                    label="PLG_SYSTEM_R3DIFRAMESCROLL_FIELD_REQUIRE_USER_INTERACTION_LABEL"
+                    description="PLG_SYSTEM_R3DIFRAMESCROLL_FIELD_REQUIRE_USER_INTERACTION_DESC"
+                    class="btn-group btn-group-yesno"
+                    filter="integer"
+                    layout="joomla.form.field.radio.switcher"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field
+                    name="restore_after_page_reload"
+                    type="radio"
+                    default="1"
+                    label="PLG_SYSTEM_R3DIFRAMESCROLL_FIELD_RESTORE_AFTER_PAGE_RELOAD_LABEL"
+                    description="PLG_SYSTEM_R3DIFRAMESCROLL_FIELD_RESTORE_AFTER_PAGE_RELOAD_DESC"
+                    class="btn-group btn-group-yesno"
+                    filter="integer"
+                    layout="joomla.form.field.radio.switcher"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field
+                    name="scroll_on_iframe_load"
+                    type="radio"
+                    default="1"
+                    label="PLG_SYSTEM_R3DIFRAMESCROLL_FIELD_SCROLL_ON_IFRAME_LOAD_LABEL"
+                    description="PLG_SYSTEM_R3DIFRAMESCROLL_FIELD_SCROLL_ON_IFRAME_LOAD_DESC"
+                    class="btn-group btn-group-yesno"
+                    filter="integer"
+                    layout="joomla.form.field.radio.switcher"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field
+                    name="listen_postmessage"
+                    type="radio"
+                    default="0"
+                    label="PLG_SYSTEM_R3DIFRAMESCROLL_FIELD_LISTEN_POSTMESSAGE_LABEL"
+                    description="PLG_SYSTEM_R3DIFRAMESCROLL_FIELD_LISTEN_POSTMESSAGE_DESC"
+                    class="btn-group btn-group-yesno"
+                    filter="integer"
+                    layout="joomla.form.field.radio.switcher"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field
+                    name="allowed_message_origins"
+                    type="textarea"
+                    default=""
+                    label="PLG_SYSTEM_R3DIFRAMESCROLL_FIELD_ALLOWED_MESSAGE_ORIGINS_LABEL"
+                    description="PLG_SYSTEM_R3DIFRAMESCROLL_FIELD_ALLOWED_MESSAGE_ORIGINS_DESC"
+                    rows="3"
+                    cols="60"
+                    filter="raw"
+                />
+                <field
+                    name="yootheme_mode"
+                    type="list"
+                    default="auto"
+                    label="PLG_SYSTEM_R3DIFRAMESCROLL_FIELD_YOOTHEME_MODE_LABEL"
+                    description="PLG_SYSTEM_R3DIFRAMESCROLL_FIELD_YOOTHEME_MODE_DESC"
+                >
+                    <option value="auto">PLG_SYSTEM_R3DIFRAMESCROLL_OPTION_AUTO</option>
+                    <option value="yes">JYES</option>
+                    <option value="no">JNO</option>
+                </field>
+                <field
+                    name="debug"
+                    type="radio"
+                    default="0"
+                    label="PLG_SYSTEM_R3DIFRAMESCROLL_FIELD_DEBUG_LABEL"
+                    description="PLG_SYSTEM_R3DIFRAMESCROLL_FIELD_DEBUG_DESC"
+                    class="btn-group btn-group-yesno"
+                    filter="integer"
+                    layout="joomla.form.field.radio.switcher"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+</extension>
