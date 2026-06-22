@@ -7,7 +7,7 @@
     <authorUrl>https://www.r3d.de</authorUrl>
     <copyright>2026 Richard Dvorak</copyright>
     <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <description>PLG_SYSTEM_R3DIFRAMESCROLL_DESCRIPTION</description>
     <namespace path="src">Joomla\Plugin\System\R3diframescroll</namespace>
 

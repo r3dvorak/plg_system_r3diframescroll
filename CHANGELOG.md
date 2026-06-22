@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a Changelog.
 
+## [1.0.1] - 2026-06-22
+
+### Changed
+
+- Version uptick for the next public test build.
+- Metadata and release files aligned for the refreshed package ZIP.
+
 ## [1.0.0] - 2026-06-22
 
 ### Added
