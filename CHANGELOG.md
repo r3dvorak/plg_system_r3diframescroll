@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a Changelog.
 
+## [1.1.0] - 2026-06-22
+
+### Changed
+
+- Promoted the working `onAfterRender()` bootstrap to the production loading path.
+- Removed the hard test marker injection from the frontend output.
+- Restored runtime option delivery so frontend parameters such as `Scroll Offset` are respected again.
+
 ## [1.0.9] - 2026-06-22
 
 ### Changed

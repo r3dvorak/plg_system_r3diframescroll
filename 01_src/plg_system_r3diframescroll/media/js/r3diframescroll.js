@@ -2,8 +2,8 @@
   "use strict";
 
   var options = (window.Joomla && typeof window.Joomla.getOptions === "function")
-    ? window.Joomla.getOptions("plg_system_r3diframescroll", {})
-    : {};
+    ? window.Joomla.getOptions("plg_system_r3diframescroll", window.R3dIframeScrollConfig || {})
+    : (window.R3dIframeScrollConfig || {});
 
   var selector = options.selector || 'iframe[src*="edoobox.com"], iframe[id^="edoobox_"], iframe[name^="edooboxFrame_"]';
   var storageKey = options.storageKey || "r3d_iframescroll_target";
