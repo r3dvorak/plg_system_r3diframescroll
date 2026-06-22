@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a Changelog.
 
+## [1.0.6] - 2026-06-22
+
+### Changed
+
+- Added a hard test classic system plugin bootstrap with unconditional frontend marker output.
+- Removed frontend parameter gating from the bootstrap to isolate installation and event execution issues.
+- Prepared a pure install/bootstrap test build to verify whether Joomla reaches the plugin at all.
+
 ## [1.0.4] - 2026-06-22
 
 ### Changed
