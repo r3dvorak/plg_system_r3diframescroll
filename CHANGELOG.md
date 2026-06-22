@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a Changelog.
 
+## [1.0.8] - 2026-06-22
+
+### Changed
+
+- Replaced the strict `HtmlDocument` class check with a document type check for better Joomla 6 and template compatibility.
+- Kept the classic hard-test bootstrap and frontend marker to verify event execution.
+- Added a second hard marker before script injection for easier frontend diagnosis.
+
 ## [1.0.7] - 2026-06-22
 
 ### Changed
