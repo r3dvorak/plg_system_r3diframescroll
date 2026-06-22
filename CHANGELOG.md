@@ -10,6 +10,9 @@ The format is based on Keep a Changelog.
 
 - Version uptick for the next public test build.
 - Metadata and release files aligned for the refreshed package ZIP.
+- Fixed frontend asset loading for the plugin JavaScript.
+- Replaced the legacy bootstrap class with the correct service-provider bootstrap pattern.
+- Added a direct WebAssetManager fallback registration for the frontend script.
 
 ## [1.0.0] - 2026-06-22
 

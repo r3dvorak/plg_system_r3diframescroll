@@ -13,6 +13,7 @@ defined('_JEXEC') or die;
 
 use Joomla\CMS\Application\CMSApplicationInterface;
 use Joomla\CMS\Document\HtmlDocument;
+use Joomla\CMS\Factory;
 use Joomla\CMS\Plugin\CMSPlugin;
 use Joomla\CMS\Uri\Uri;
 
@@ -22,7 +23,7 @@ final class R3dIframeScroll extends CMSPlugin
 
     public function onBeforeCompileHead(): void
     {
-        $app = $this->getApplication();
+        $app = $this->getApplication() ?: Factory::getApplication();
 
         if (!$app instanceof CMSApplicationInterface || !$app->isClient('site')) {
             return;
@@ -39,7 +40,14 @@ final class R3dIframeScroll extends CMSPlugin
         }
 
         $wa = $document->getWebAssetManager();
+        $assetName = 'plg_system_r3diframescroll.scroll';
+        $assetUri = 'plg_system_r3diframescroll/js/r3diframescroll.js';
+
         $wa->getRegistry()->addExtensionRegistryFile('plg_system_r3diframescroll');
+
+        if (!$wa->assetExists('script', $assetName)) {
+            $wa->registerScript($assetName, $assetUri, [], ['defer' => true]);
+        }
 
         $allowedOrigins = preg_split('/[\r\n,]+/', (string) $this->params->get('allowed_message_origins', '')) ?: [];
         $allowedOrigins = array_values(
@@ -72,6 +80,6 @@ final class R3dIframeScroll extends CMSPlugin
         ];
 
         $document->addScriptOptions('plg_system_r3diframescroll', $options);
-        $wa->useScript('plg_system_r3diframescroll.scroll');
+        $wa->useScript($assetName);
     }
 }

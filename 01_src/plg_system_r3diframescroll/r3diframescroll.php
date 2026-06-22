@@ -9,8 +9,4 @@
 
 defined('_JEXEC') or die;
 
-require_once __DIR__ . '/src/Extension/R3dIframeScroll.php';
-
-class PlgSystemR3diframescroll extends \Joomla\Plugin\System\R3diframescroll\Extension\R3dIframeScroll
-{
-}
+// Intentionally empty. Joomla resolves the plugin through services/provider.php.
