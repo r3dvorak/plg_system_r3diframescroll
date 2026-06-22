@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a Changelog.
 
+## [1.0.9] - 2026-06-22
+
+### Changed
+
+- Switched the hard test bootstrap to `onAfterRender()` with direct HTML injection.
+- Replaced application access with `Factory::getApplication()` for the frontend hard test.
+- Removed document and parameter checks from the hard test to isolate frontend execution.
+
 ## [1.0.8] - 2026-06-22
 
 ### Changed
