@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a Changelog.
 
+## [1.0.7] - 2026-06-22
+
+### Changed
+
+- Added a hard fingerprint release for clean uninstall/reinstall verification.
+- Added a unique frontend HTML marker for version 1.0.7.
+- Appended a version query string to the frontend script URL for easier verification.
+
 ## [1.0.6] - 2026-06-22
 
 ### Changed
