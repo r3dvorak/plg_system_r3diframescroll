@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a Changelog.
 
+## [1.0.2] - 2026-06-22
+
+### Changed
+
+- Ensured frontend script loading through a direct document script include.
+- Added an optional debug HTML comment to confirm that the plugin event executed.
+- Updated plugin metadata for the 1.0.2 test build.
+
 ## [1.0.1] - 2026-06-22
 
 ### Changed

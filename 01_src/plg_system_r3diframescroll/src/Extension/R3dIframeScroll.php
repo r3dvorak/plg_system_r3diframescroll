@@ -1,7 +1,7 @@
 <?php
 /**
  * @package     plg_system_r3diframescroll
- * @version     1.0.1
+ * @version     1.0.2
  * @author      Richard Dvorak <info@r3d.de>
  * @copyright   2026 Richard Dvorak
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
@@ -13,7 +13,6 @@ defined('_JEXEC') or die;
 
 use Joomla\CMS\Application\CMSApplicationInterface;
 use Joomla\CMS\Document\HtmlDocument;
-use Joomla\CMS\Factory;
 use Joomla\CMS\Plugin\CMSPlugin;
 use Joomla\CMS\Uri\Uri;
 
@@ -23,7 +22,7 @@ final class R3dIframeScroll extends CMSPlugin
 
     public function onBeforeCompileHead(): void
     {
-        $app = $this->getApplication() ?: Factory::getApplication();
+        $app = $this->getApplication();
 
         if (!$app instanceof CMSApplicationInterface || !$app->isClient('site')) {
             return;
@@ -37,16 +36,6 @@ final class R3dIframeScroll extends CMSPlugin
 
         if (!$document instanceof HtmlDocument) {
             return;
-        }
-
-        $wa = $document->getWebAssetManager();
-        $assetName = 'plg_system_r3diframescroll.scroll';
-        $assetUri = 'plg_system_r3diframescroll/js/r3diframescroll.js';
-
-        $wa->getRegistry()->addExtensionRegistryFile('plg_system_r3diframescroll');
-
-        if (!$wa->assetExists('script', $assetName)) {
-            $wa->registerScript($assetName, $assetUri, [], ['defer' => true]);
         }
 
         $allowedOrigins = preg_split('/[\r\n,]+/', (string) $this->params->get('allowed_message_origins', '')) ?: [];
@@ -80,6 +69,14 @@ final class R3dIframeScroll extends CMSPlugin
         ];
 
         $document->addScriptOptions('plg_system_r3diframescroll', $options);
-        $wa->useScript($assetName);
+        $document->addScript(
+            Uri::root(true) . '/media/plg_system_r3diframescroll/js/r3diframescroll.js',
+            [],
+            ['defer' => true]
+        );
+
+        if ((bool) $this->params->get('debug', 0)) {
+            $document->addCustomTag('<!-- R3D Iframe Scroll plugin loaded -->');
+        }
     }
 }
