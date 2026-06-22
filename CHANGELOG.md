@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a Changelog.
 
+## [1.0.3] - 2026-06-22
+
+### Changed
+
+- Fixed system plugin frontend loading by supporting both legacy and service-provider bootstrap paths.
+- Centralized frontend asset injection behind a shared loader with duplicate-load protection.
+- Added debug markers for plugin event reachability and script initialization.
+
 ## [1.0.2] - 2026-06-22
 
 ### Changed

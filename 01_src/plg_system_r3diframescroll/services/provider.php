@@ -1,7 +1,7 @@
 <?php
 /**
  * @package     plg_system_r3diframescroll
- * @version     1.0.2
+ * @version     1.0.3
  * @author      Richard Dvorak <info@r3d.de>
  * @copyright   2026 Richard Dvorak
  * @license     GNU General Public License version 2 or later; see LICENSE.txt

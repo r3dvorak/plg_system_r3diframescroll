@@ -35,6 +35,8 @@
     console.log.apply(console, args);
   }
 
+  debug("script loaded");
+
   function getFrames() {
     try {
       return Array.prototype.slice.call(document.querySelectorAll(selector));
