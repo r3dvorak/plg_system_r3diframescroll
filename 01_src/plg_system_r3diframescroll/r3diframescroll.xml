@@ -7,7 +7,7 @@
     <authorUrl>https://www.r3d.de</authorUrl>
     <copyright>2026 Richard Dvorak</copyright>
     <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-    <version>1.1.0</version>
+    <version>1.1.1</version>
     <description>PLG_SYSTEM_R3DIFRAMESCROLL_DESCRIPTION</description>
     <files>
         <filename plugin="r3diframescroll">r3diframescroll.php</filename>
@@ -25,6 +25,10 @@
         <language tag="de-DE">de-DE/de-DE.plg_system_r3diframescroll.ini</language>
         <language tag="de-DE">de-DE/de-DE.plg_system_r3diframescroll.sys.ini</language>
     </languages>
+
+    <updateservers>
+        <server type="extension" priority="1" name="R3D Iframe Scroll Update Server">https://extensions.r3d.de/phocadownload/plg_system_r3diframescroll.xml</server>
+    </updateservers>
 
     <config>
         <fields name="params">

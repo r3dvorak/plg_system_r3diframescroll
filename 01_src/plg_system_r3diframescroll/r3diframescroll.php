@@ -1,7 +1,7 @@
 <?php
 /**
  * @package     plg_system_r3diframescroll
- * @version     1.1.0
+ * @version     1.1.1
  * @author      Richard Dvorak <info@r3d.de>
  * @copyright   2026 Richard Dvorak
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
@@ -15,6 +15,8 @@ use Joomla\CMS\Uri\Uri;
 
 class PlgSystemR3diframescroll extends CMSPlugin
 {
+    private const VERSION = '1.1.1';
+
     public function onAfterRender()
     {
         $app = Factory::getApplication();
@@ -29,7 +31,7 @@ class PlgSystemR3diframescroll extends CMSPlugin
 
         $body = $app->getBody();
 
-        $scriptUrl = Uri::root(true) . '/media/plg_system_r3diframescroll/js/r3diframescroll.js?v=1.1.0';
+        $scriptUrl = Uri::root(true) . '/media/plg_system_r3diframescroll/js/r3diframescroll.js?v=' . self::VERSION;
         $marker = $scriptUrl;
 
         if (strpos($body, $marker) !== false) {

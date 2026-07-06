@@ -1,5 +1,7 @@
 # R3D Iframe Scroll
 
+Current release: `1.1.1`.
+
 Joomla 5/6 system plugin that restores the page scroll position to the relevant iframe after iframe reloads and optional full page reloads.
 
 ## Purpose
@@ -11,6 +13,12 @@ External booking or form iframes can trigger a new `load` event during user inte
 1. Build or use the installable ZIP for `plg_system_r3diframescroll`.
 2. Install it in Joomla via `System -> Install -> Extensions`.
 3. Enable `System - R3D Iframe Scroll`.
+
+## Update Feed
+
+The Joomla update server URL for this plugin is:
+
+`https://extensions.r3d.de/phocadownload/plg_system_r3diframescroll.xml`
 
 ## Activation
 

@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a Changelog.
 
+## [1.1.1] - 2026-07-06
+
+### Changed
+
+- Added Joomla update-server metadata to the plugin manifest.
+- Aligned the release metadata with the new `1.1.1` build.
+- Prepared the release workflow for update XML, Phoca publication, and FTP-based upload verification.
+
 ## [1.1.0] - 2026-06-22
 
 ### Changed
