@@ -6,7 +6,7 @@ Lokale Arbeitsregeln fuer `plg_system_r3diframescroll`.
 
 - `project.json` ist die zentrale Metadatenquelle fuer Name, Slug, Artefaktbasis, Version, Autor, Release-URL und Pfade.
 - Das Manifest in `01_src/plg_system_r3diframescroll/r3diframescroll.xml` und der PHP-Header muessen zur Version aus `project.json` passen.
-- Die Joomla-Update-URL fuer dieses Plugin ist `https://extensions.r3d.de/joomlaextensions/updates/plg_system_r3diframescroll.xml`.
+- Die Joomla-Update-URL fuer dieses Plugin ist `https://extensions.r3d.de/phocadownload/plg_system_r3diframescroll.xml`.
 
 ## Verbindliche Release-Regeln
 
